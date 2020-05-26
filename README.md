@@ -27,7 +27,7 @@ Is a set of docker compose to create home server which provides:
 - [Docker compose](https://docs.docker.com/compose/install/)
 - At least 2GB of RAM
 - At least 2 dedicated CPU cores for your docker
-- You need to change Adguard default port to `8081` manually
+- You need to change Adguard default port to `8081` manually during the installation
 
 ## Optionals
 If you are willing to access to your services using the generated domain on your host machine then you need to edit your hosts file to support local domain name resolving:
