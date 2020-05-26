@@ -1,8 +1,8 @@
 # Dockerized Home Server
 
-Is a set of docker compose to create home server which provides: 
-- Reverse proxy to use local domain name to access to your different services 
-- DNS resolver + Ad blocker 
+Is a set of docker compose to create home server which provides:
+- Reverse proxy to use local domain name to access to your different services
+- DNS resolver + Ad blocker
 - Web space for your different web applications
 - Container manager
 - Media manager solution
@@ -22,7 +22,7 @@ Is a set of docker compose to create home server which provides:
 - [Planing](#planing)
 - [FAQ or issues](#faq-or-issues)
 
-## Requirements: 
+## Requirements:
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker compose](https://docs.docker.com/compose/install/)
 - At least 2GB of RAM
@@ -70,8 +70,8 @@ If you are willing to access to your services using the generated domain on your
     - [Node-Exporter](https://hub.docker.com/r/prom/node-exporter/)
     - [cAdvisor](https://github.com/google/cadvisor)
 
-## Deploy 
-First you need to provide your configuration: 
+## Deploy
+First you need to provide your configuration:
 ### Windows
 Create or edit `docker-compose-env.ps1`, for reference check `docker-compose-env.default.ps1` :
 ```powershell
@@ -79,7 +79,7 @@ Create or edit `docker-compose-env.ps1`, for reference check `docker-compose-env
 # Don't forget to rewrite your domain in adguard
 $env:DOMAIN = "YOUR_DOMAIN"
 # Check https://docs.traefik.io/middlewares/basicauth/
-$env:BASIC_AUTH_USER = "YOUR_BASIC_AUTH_USER"   
+$env:BASIC_AUTH_USER = "YOUR_BASIC_AUTH_USER"
 $env:TRAEFIK_PORT = "YOUR_TRAEFIK_PORT"
 $env:ADGUARD_PORT = "YOUR_ADGUARD_PORT"
 $env:ORGANIZR_PORT = "YOUR_ORGANIZR_PORT"
@@ -143,24 +143,28 @@ export PROMETHEUS_PORT="YOUR_PROMETHEUS_PORT"
 
 Starting composing by running:
 ```bash
-source docker-compose-env.sh
 ./docker-compose-start.sh
-``` 
+```
 
-## File sharing 
-I'm using Windows as host and I'm using Windows SMB to share my files accross my network. 
+To stop and remove services run:
+```bash
+./docker-compose-down.sh
+```
 
-You may need to setup [Samba](https://hub.docker.com/r/dperson/samba/) sever to share you files or not. 
+## File sharing
+I'm using Windows as host and I'm using Windows SMB to share my files accross my network.
+
+You may need to setup [Samba](https://hub.docker.com/r/dperson/samba/) sever to share you files or not.
 
 ## Media Clients
-For my media clients, I'm using Kodi based on Windows SMB. 
+For my media clients, I'm using Kodi based on Windows SMB.
 
-## Planing 
-I'm planing to add hassio with default config for the next days. 
+## Planing
+I'm planing to add hassio with default config for the next days.
 
-## FAQ or Issues: 
+## FAQ or Issues:
 ### I can't access to my services using my domain name !!
-Check your router for possible DNS binding protection, if it's the case like FritzBox Router then you need to make an exception for your domain. 
+Check your router for possible DNS binding protection, if it's the case like FritzBox Router then you need to make an exception for your domain.
 
 ### I can't run `ps1` file!!
 Run `Set-ExecutionPolicy RemoteSigned` as Admin and follow the instructions.
