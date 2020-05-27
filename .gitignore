@@ -3,7 +3,3 @@
 /network
 docker-compose-env.ps1
 docker-compose-env.sh
-
-# alert manager generated files.
-nflog
-silences
