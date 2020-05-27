@@ -109,7 +109,7 @@ $env:PROMETHEUS_PORT = "YOUR_PROMETHEUS_PORT"
 
 Starting composing by running `docker-compose-start.ps1` on powershell.
 
-### Ubuntu or MasOS
+### Ubuntu or MacOS
 Create or edit `docker-compose-env.sh` as executable, for reference check `docker-compose-env.default.sh` :
 
 ```sh
